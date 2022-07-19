@@ -1,0 +1,19 @@
+{
+  "name": "greenomy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mongo": "docker-compose -f docker-compose.yaml up -d",
+    "dev": "pnpm run mongo && nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.19",
+    "tsup": "^6.1.3",
+    "typescript": "^4.7.4"
+  }
+}
