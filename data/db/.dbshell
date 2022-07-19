@@ -1,0 +1,14 @@
+use booking
+db.listUsers()
+db.system.users.find()
+use admin
+db.system.users.find()
+use booking
+db.system.users.find()
+db.users.find()
+use admnin
+db.system.users.find()
+use admin
+db.system.users.find()
+use admin
+db.system.users.find()
