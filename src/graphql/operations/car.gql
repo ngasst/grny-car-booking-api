@@ -1,0 +1,15 @@
+query cars($filter: CarFilterInput, $pagination: PaginationInput) {
+  cars(filter: $filter, pagination: $pagination) {
+    id
+    make
+    model
+    year
+    price
+    color
+    mileage
+    description
+    image
+    createdAt
+    updatedAt
+  }
+}

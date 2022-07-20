@@ -1,0 +1,35 @@
+
+query bookings($filter: BookingFilterPayload, $pagination: PaginationPayload) {
+    items {
+      id
+      name
+      email
+      phone
+      address
+      city
+      state
+      zip
+      country
+      createdAt
+      updatedAt
+    }
+    total
+  }
+}
+
+query booking($id: ID!) {
+  item(id: $id) {
+    id
+    name
+    email
+    phone
+    address
+    city
+    state
+    zip
+    country
+    createdAt
+    updatedAt
+  }
+}
+

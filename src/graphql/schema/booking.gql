@@ -1,0 +1,6 @@
+type Booking {
+  id: ID!
+  user: User!
+  startDate: String!
+  endDate: String!
+}

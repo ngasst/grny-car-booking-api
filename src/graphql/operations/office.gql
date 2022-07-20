@@ -1,0 +1,15 @@
+query offices($filter: OfficeFilterInput, $pagination: PaginationInput) {
+  offices(filter: $filter, pagination: $pagination) {
+    items {
+      id
+      name
+      description
+      address
+      phone
+      email
+      createdAt
+      updatedAt
+    }
+    total
+  }
+}
