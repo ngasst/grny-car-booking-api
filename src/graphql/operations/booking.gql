@@ -1,35 +1,64 @@
-
-query bookings($filter: BookingFilterPayload, $pagination: PaginationPayload) {
-    items {
+query bookings($filter: BookingFilterInput, $pagination: PaginationInput) {
+  bookings(filter: $filter, pagination: $pagination) {
+    total
+    error
+    ok
+    bookings {
       id
-      name
-      email
-      phone
-      address
-      city
-      state
-      zip
-      country
+      kind
+      start
+      end
+      user {
+        id
+        name
+        email
+      }
+      car {
+        id
+        model
+        color
+      }
+      status
+      office {
+        id
+        name
+        latitude
+        longitude
+      }
       createdAt
       updatedAt
     }
-    total
   }
 }
 
 query booking($id: ID!) {
-  item(id: $id) {
-    id
-    name
-    email
-    phone
-    address
-    city
-    state
-    zip
-    country
-    createdAt
-    updatedAt
+  booking(id: $id) {
+    booking {
+      id
+      kind
+      start
+      end
+      user {
+        id
+        name
+        email
+      }
+      car {
+        id
+        model
+        color
+      }
+      status
+      office {
+        id
+        name
+        latitude
+        longitude
+      }
+      createdAt
+      updatedAt
+    }
+    error
+    ok
   }
 }
-

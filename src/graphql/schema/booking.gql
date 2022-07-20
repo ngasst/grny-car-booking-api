@@ -1,6 +1,12 @@
 type Booking {
   id: ID!
-  user: User!
-  startDate: String!
-  endDate: String!
+  kind: String
+  start: String
+  end: String
+  user: User
+  car: Car
+  status: String
+  office: Office
+  createdAt: String
+  updatedAt: String
 }

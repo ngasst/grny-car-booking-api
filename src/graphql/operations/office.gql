@@ -1,6 +1,6 @@
-query offices($filter: OfficeFilterInput, $pagination: PaginationInput) {
-  offices(filter: $filter, pagination: $pagination) {
-    items {
+query offices($pagination: PaginationInput) {
+  offices(pagination: $pagination) {
+    offices {
       id
       name
       description
@@ -11,5 +11,7 @@ query offices($filter: OfficeFilterInput, $pagination: PaginationInput) {
       updatedAt
     }
     total
+    ok
+    error
   }
 }

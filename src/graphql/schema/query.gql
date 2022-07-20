@@ -1,0 +1,12 @@
+type Query {
+  bookings(
+    filter: BookingFilterInput
+    pagination: PaginationInput
+  ): BookingsApiResult
+  booking(id: ID!): BookingApiResult
+  me: UserApiResult
+  offices(pagination: PaginationInput): OfficesApiResult
+  office(id: ID!): OfficeApiResult
+  cars(pagination: PaginationInput): CarsApiResult
+  car(id: ID!): CarApiResult
+}

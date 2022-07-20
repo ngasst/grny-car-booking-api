@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@graphql-tools/merge': ^8.3.0
+  '@graphql-typed-document-node/core': ^3.1.1
   '@types/node': ^18.0.6
   date-fns: ^2.28.0
   fastify: ^4.2.1
@@ -24,6 +25,7 @@ dependencies:
 
 devDependencies:
   '@graphql-tools/merge': 8.3.0_graphql@16.5.0
+  '@graphql-typed-document-node/core': 3.1.1_graphql@16.5.0
   '@types/node': 18.0.6
   mercurius-codegen: 4.0.0_oybxrxpha2uszv6gsc5sgedb4i
   nodemon: 2.0.19

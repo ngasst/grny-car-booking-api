@@ -16,6 +16,7 @@ import {
   officeResolvers,
   userResolvers,
 } from './resolvers';
+import { graphqlObjectMerge } from './utils';
 
 const loaders = {
   ...bookingLoaders,
@@ -24,19 +25,19 @@ const loaders = {
   ...officeLoaders,
 };
 
-const resolvers = mergeResolvers([
-  bookingResolvers,
-  userResolvers,
-  carResolvers,
-  officeResolvers,
-]) as any;
+const resolvers = graphqlObjectMerge([
+  bookingResolvers as any,
+  userResolvers as any,
+  carResolvers as any,
+  officeResolvers as any,
+]);
 // typed any as this kept crashing the remote host extension. Obviously needs to be cleaned up.
 
 export const app = Fastify({
   logger: true,
 });
 
-const { schema } = loadSchemaFiles('graphql/schema/**/*.gql', {
+const { schema } = loadSchemaFiles('src/graphql/schema/**/*.gql', {
   watchOptions: {
     enabled: process.env.NODE_ENV !== 'production',
     onChange(schema) {
@@ -60,15 +61,17 @@ export const buildContext = async (
 app.register(mercurius, {
   schema,
   context: buildContext,
+  loaders,
   resolvers,
-  loaders: loaders,
-  subscriptions: false,
-  graphiql: process.env.NODE_ENV !== 'production',
+  graphiql: true,
+  subscription: false,
 });
 
 function codegen() {
   codegenMercurius(app, {
-    targetPath: './graphql/generated.ts',
-    operationsGlob: './graphql/operations/*.gql',
+    targetPath: 'src/graphql/generated.ts',
+    operationsGlob: 'src/graphql/operations/*.gql',
   }).catch(console.error);
 }
+
+codegen();

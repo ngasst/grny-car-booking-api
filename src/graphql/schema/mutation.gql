@@ -1,0 +1,22 @@
+type Mutation {
+  makeReservation(
+    kind: String
+    start: String
+    end: String
+    user: ID
+    car: ID
+    status: String
+    office: ID
+  ): Booking
+  updateBooking(
+    id: ID
+    kind: String
+    start: String
+    end: String
+    user: ID
+    car: ID
+    status: String
+    office: ID
+  ): Booking
+  deleteBooking(id: ID!): Booking
+}

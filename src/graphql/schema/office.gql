@@ -1,0 +1,13 @@
+type Office {
+  id: ID!
+  name: String
+  address: String
+  phone: String
+  email: String
+  images: [String]
+  description: String
+  latitude: Float
+  longitude: Float
+  createdAt: String
+  updatedAt: String
+}

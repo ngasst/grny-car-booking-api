@@ -1,9 +1,13 @@
 query me {
   me {
-    id
-    name
-    email
-    createdAt
-    updatedAt
+    user {
+      id
+      name
+      email
+      createdAt
+      updatedAt
+    }
+    error
+    ok
   }
 }

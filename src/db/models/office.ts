@@ -56,4 +56,4 @@ schema.virtual('id').get(function (this: IOffice) {
   return this._id.toString();
 });
 
-export const Office = model<IOffice>('User', schema);
+export const Office = model<IOffice>('Office', schema);

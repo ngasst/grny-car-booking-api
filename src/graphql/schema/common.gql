@@ -1,4 +1,68 @@
 input PaginationInput {
   page: Int
   size: Int
+  sort: Int
+  order: String
+}
+
+input BookingFilterInput {
+  officeId: String
+  carId: ID
+  userId: ID
+  startDate: String
+  endDate: String
+  status: String
+  kind: String
+  age: Int
+}
+
+type BookingsApiResult {
+  bookings: [Booking]
+  total: Int
+  ok: Boolean
+  error: String
+}
+type BookingApiResult {
+  booking: Booking
+  ok: Boolean
+  error: String
+}
+
+type OfficesApiResult {
+  offices: [Office]
+  ok: Boolean
+  total: Int
+  error: String
+}
+
+type OfficeApiResult {
+  office: Office
+  ok: Boolean
+  error: String
+}
+
+type CarsApiResult {
+  cars: [Car]
+  ok: Boolean
+  total: Int
+  error: String
+}
+
+type CarApiResult {
+  car: Car
+  ok: Boolean
+  error: String
+}
+
+type UsersApiResult {
+  users: [User]
+  ok: Boolean
+  total: Int
+  error: String
+}
+
+type UserApiResult {
+  user: User
+  ok: Boolean
+  error: String
 }

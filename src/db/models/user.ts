@@ -1,4 +1,4 @@
-import { Schema, model, Document, SchemaTypes } from 'mongoose';
+import { Schema, model, Document, models } from 'mongoose';
 
 export interface IUser extends Document {
   name: string;
@@ -24,5 +24,6 @@ const schema = new Schema<IUser>(
 schema.virtual('id').get(function (this: IUser) {
   return this._id.toString();
 });
+
 
 export const User = model<IUser>('User', schema);

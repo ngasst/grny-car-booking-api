@@ -7,7 +7,7 @@ export interface ICar extends Document {
   color: string;
   price: number;
   description: string;
-  image: string;
+  images: string[];
 }
 
 const schema = new Schema<ICar>(
@@ -36,9 +36,11 @@ const schema = new Schema<ICar>(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-    },
+    images: [
+      {
+        type: String,
+      },
+    ],
   },
   {
     timestamps: true,

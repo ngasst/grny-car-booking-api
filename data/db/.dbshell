@@ -12,3 +12,6 @@ use admin
 db.system.users.find()
 use admin
 db.system.users.find()
+use admin
+db.system.users.find()
+use bookings

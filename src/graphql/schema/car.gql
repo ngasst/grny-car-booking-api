@@ -1,0 +1,12 @@
+type Car {
+  id: ID!
+  model: String
+  make: String
+  color: String
+  year: Int
+  price: Int
+  description: String
+  images: [String]
+  createdAt: String
+  updatedAt: String
+}

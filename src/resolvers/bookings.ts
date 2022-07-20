@@ -5,11 +5,7 @@ export const bookingResolvers: IResolvers = {
   Query: {
     bookings: async (
       _: unknown,
-      {
-        filters,
-
-        pagination,
-      }: BookingListParams
+      { filters, pagination }: BookingListParams
     ): Promise<{ total: number; bookings: IBooking[] }> => {
       const { page, limit } = pagination;
       const { officeId, carId, userId, startDate, endDate, status, age } =
@@ -48,6 +44,20 @@ export const bookingResolvers: IResolvers = {
         bookings,
         total,
       };
+    },
+  },
+  Mutation: {
+    makeReservation: async (_: unknown, { booking }: MakeReservationParams) => {
+      const { startDate, endDate, officeId, carId, userId } = booking;
+      const bookingDoc = new Booking({
+        startDate,
+        endDate,
+        officeId,
+        carId,
+        userId,
+      });
+      await bookingDoc.save();
+      return bookingDoc;
     },
   },
 };

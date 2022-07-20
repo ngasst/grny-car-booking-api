@@ -1,6 +1,6 @@
 {
-  "ext": "ts",
+  "ext": "js",
   "ignore": [".git", "node_modules/**/node_modules"],
-  "watch": ["src/"],
-  "exec": "tsup src/index.ts --watch --sourcemap inline --format esm,cjs --dts && node dist/index.js"
+  "watch": ["dist/"],
+  "exec": "node dist/index.js"
 }

@@ -1,5 +1,5 @@
 import { IUser } from './user';
-import { Schema, model, SchemaTypes, Document } from 'mongoose';
+import { Schema, model, SchemaTypes, Document, models } from 'mongoose';
 import { ICar } from './car';
 import { IOffice } from './office';
 
@@ -69,4 +69,4 @@ schema.virtual('id').get(function (this: IBooking) {
   return this._id.toString();
 });
 
-export const Booking = model<IBooking>('Booking', schema);
+export const Booking = models.Booking ?? model<IBooking>('Booking', schema);
